@@ -1,3 +1,4 @@
+
 function timer() {
     var message = document.createElement('p');
     message.innerHTML = 'Hello, World!';
@@ -15,22 +16,22 @@ var buttonMore = document.querySelector('.more');
 
 
 
-var originalText = document.querySelector('.longtext').innerHTML;
+var originalText = document.querySelector('.longtext').innerText;
 
 function cutText() {
     var textNode = document.querySelector('.longtext');
-    var text = textNode.innerHTML;
+    var text = textNode.innerText;
     if (text.length > 500) {
         text = text.slice(0, 500);
-        buttonLess.style.display = 'none';
-        buttonMore.style.display = 'inline-block';
+        buttonLess.className = 'more';
+        buttonMore.className = 'less';
     }
-    textNode.innerHTML = text + '...';
+    textNode.innerText = text + '...';
 }
 
 function showText() {
-    document.querySelector('.longtext').innerHTML = originalText;
-    buttonLess.style.display = 'inline-block';
-    buttonMore.style.display = 'none';
+    document.querySelector('.longtext').innerText = originalText;
+    buttonLess.className = 'less';
+    buttonMore.className = 'more';
 
 }
